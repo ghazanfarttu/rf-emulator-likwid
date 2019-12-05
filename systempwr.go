@@ -6,7 +6,6 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"std/time"
 	"time"
 )
 
@@ -214,7 +213,7 @@ func main() {
 	//tickIntervav := "10"
 	//dur, _ := time.ParseDuration(tickIntervav)
 	//ticker := time.NewTicker(10 * time.)
-	ticker := time.NewTicker(500 * time.Millisecond)
+	ticker := time.NewTicker(2 * time.Second)
 
 	// Generate a constant stream of events that get pushed
 	// into the Broker's messages channel and are then broadcast
@@ -226,13 +225,13 @@ func main() {
 			case <-ticker.C:
 				b.tempData <- GetCPUTemp()
 				// Print log message
-				log.Printf("Report Temperature Metric: %d ", i)
+				log.Printf("Sequence#: %d, Temperature: %v ", i, b.tempData)
 			}
 		}
 	}()
 
 	hostIP := GetNodeIPAddress()
-	log.Println("Starting server...")
+	log.Println("Starting server...", hostIP)
 	// Start the server and listen forever on port 8000.
 	http.ListenAndServe(hostIP+":8000", nil)
 }
