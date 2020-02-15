@@ -233,5 +233,6 @@ func main() {
 	hostIP := GetNodeIPAddress()
 	log.Println("Starting server...", hostIP)
 	// Start the server and listen forever on port 8000.
-	http.ListenAndServe(hostIP+":8000", nil)
+	http.ListenAndServe("10.0.75.74:8000", nil)
+
 }
