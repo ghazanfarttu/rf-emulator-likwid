@@ -89,7 +89,10 @@ func main() {
 
 				if counter == 0 {
 					cpuMinPwr = cpuCurPwr
+					cpuMaxPwr = cpuCurPwr
+
 					memMinPwr = memCurPwr
+					memMaxPwr = memCurPwr
 				}
 				counter += 1
 				totalMemPwr += memCurPwr
