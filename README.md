@@ -1,2 +1,2 @@
 # rf-emulator-likwid
-Redfish API emulator for for likwid tool (https://github.com/RRZE-HPC/likwid) 
+Redfish API emulator use likwid tool available at: https://github.com/RRZE-HPC/likwid 
